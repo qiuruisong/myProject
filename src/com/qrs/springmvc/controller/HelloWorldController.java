@@ -1,4 +1,4 @@
-package com.qrs.springmvc;
+package com.qrs.springmvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,5 +11,11 @@ public class HelloWorldController {
 	public String hello(Model model){
 		model.addAttribute("greeting", "Hello Spring MVC");
 		return "helloworld";
+	}
+	
+	@RequestMapping("/login")
+	public String login(Model model){
+		
+		return "login";
 	}
 }
