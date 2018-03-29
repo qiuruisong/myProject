@@ -1,13 +1,20 @@
 package com.qrs.springmvc.dao;
 
-public interface UserDao {
-	/**
-	 * 新增
-	 */
-	public void insert(String sql);
+import org.springframework.stereotype.Component;
+
+import com.qrs.springmvc.bean.User;
+
+public class UserDao extends AbstractDao {
+	
+	private static String namespace = "com.qrs.springmvc.dao.UserMapper";
 	
 	/**
-	 * 删除
+	 * 新增
+	 * @param user
 	 */
-	public void delete();
+	public void insert(User user){
+		String statement = namespace + ".insert";
+        this.getSqlSession().insert(statement, user);
+	}
+	
 }

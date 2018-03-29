@@ -5,6 +5,31 @@
    id="WebApp_ID" version="3.0">
     
    <display-name>HelloWorldSpring</display-name>
+   
+   <!-- login Filter -->
+	<filter>
+		<filter-name>loginFilter</filter-name>
+		<filter-class>com.qrs.springmvc.filter.LoginFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>loginFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+    
+    <!-- 字符过滤器 -->  
+  <filter>  
+    <filter-name>encodingFilter</filter-name>  
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>  
+    <init-param>  
+        <param-name>encoding</param-name>  
+        <param-value>UTF-8</param-value>  
+    </init-param>  
+  </filter>  
+  <filter-mapping>  
+    <filter-name>encodingFilter</filter-name>  
+    <url-pattern>/*</url-pattern>  
+  </filter-mapping> 
     
    <servlet>
        <servlet-name>spring-mvc</servlet-name>
@@ -36,5 +61,10 @@
    <listener>
        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
    </listener>
+   
+   <!-- 设置默认的访问首页 -->     
+    <welcome-file-list>  
+        <welcome-file>login.jsp</welcome-file>  
+    </welcome-file-list>  
     
 </web-app>

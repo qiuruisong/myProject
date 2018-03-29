@@ -23,6 +23,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-   		<h3>恭喜你，登录成功！</h3>
+   		<h3>欢迎登陆</h3>
+   		<form action="/HelloSpringMVC/login">
+   			登录名：<input name="name" id="name">
+   			密码：<input name="pwd" id = "pwd">
+   			<button>登陆</button>
+   		</form>
   </body>
 </html>

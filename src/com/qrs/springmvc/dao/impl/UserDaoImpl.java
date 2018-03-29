@@ -4,12 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
-import org.springframework.stereotype.Repository;
 
-import com.qrs.springmvc.dao.UserDao;
-
-@Repository("userDao")
-public class UserDaoImpl implements UserDao {
+public class UserDaoImpl {
 	
 	public static final String url = "jdbc:mysql://127.0.0.1/improve";  
     public static final String name = "com.mysql.jdbc.Driver";  
